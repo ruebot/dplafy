@@ -20,13 +20,13 @@ docs = data["docs"]
 items = random.sample(docs,1)
 
 for item in items:
-  url = item["isShownAt"]
-  description = item["sourceResource"]["title"]
+  url = "https://dp.la/item/" + item["id"]
+  description = item["sourceResource"]["title"][0]
   fuck_yeah = "#muricafuckyeah"
+  #description = description + "\n" + fuck_yeah
+  description = (description[:102] + '...') if len(description) > 102 else description
+  if len(description) <= 1:
+      break
   description = description + "\n" + fuck_yeah
-  if len(description) > 103:
-    while len(description) + 3 > 102:
-      description = description[:len(description) - 1]
-    description = description + '...'
   tweet_text = "%s %s" % (description,url)
   api.update_status(tweet_text)
