@@ -23,10 +23,10 @@ for item in items:
   url = "https://dp.la/item/" + item["id"]
   description = item["sourceResource"]["title"][0]
   fuck_yeah = "#muricafuckyeah"
-  #description = description + "\n" + fuck_yeah
   description = (description[:102] + '...') if len(description) > 102 else description
   if len(description) <= 1:
       break
-  description = description + "\n" + fuck_yeah
+  us_flag = u'\U0001F1FA\U0001F1F8'
+  description = description + "\n" + " " + us_flag + " " + fuck_yeah
   tweet_text = "%s %s" % (description,url)
   api.update_status(tweet_text)
