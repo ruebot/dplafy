@@ -11,7 +11,7 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-dpla_data = "http://api.dp.la/v2/items?q=motorcycle+OR+harley+OR+fries+OR+hamburger+OR+hotdog+eagle+OR+flag+OR+beer+OR+beef+OR+war+OR+cow+OR+explosion+OR+explosive+OR+gun+OR+chrome&page_size=500&api_key=SOMETHING"
+dpla_data = "http://api.dp.la/v2/items?q=motorcycle+OR+harley+OR+fries+OR+hamburger+OR+hotdog+OR+eagle+OR+flag+OR+beer+OR+beef+OR+war+OR+cow+OR+explosion+OR+explosive+OR+gun+OR+chrome&page_size=500&api_key=SOMETHING"
 
 response = urllib.urlopen(dpla_data);
 data = json.loads(response.read())
